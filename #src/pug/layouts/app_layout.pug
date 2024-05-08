@@ -23,13 +23,17 @@ html(lang="ru")
 		include ../includes/mixins
 		div(class="wrapper")
 			block page-content 
-				block main-content 
-		//- script.
-		//- 		document.addEventListener('DOMContentLoaded', function() {
-		//- 				var element = document.getElementById('target-services');
-		//- 				if (element) {
-		//- 						element.scrollIntoView({ behavior: 'smooth' });
-		//- 				} else {
-		//- 						console.error('Элемент с идентификатором target-services не найден на странице.');
-		//- 				}
-		//- 		})
+				block main-content
+		block notfound
+			script.
+				window.onload = function () {
+					var segmentCount = 0;
+					var l = window.location;
+					l.replace(
+						l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+						l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+						l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+						(l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+						l.hash
+					);
+				};

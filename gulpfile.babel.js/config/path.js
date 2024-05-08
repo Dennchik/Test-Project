@@ -3,7 +3,9 @@ const pathDest = "./build";
 
 export default {
 	root: pathDest,
-
+	redirect: {
+		dest: pathDest
+	},
 	json: {
 		fileName: 'data.json',
 		src: pathSrc + '/data/*.json',

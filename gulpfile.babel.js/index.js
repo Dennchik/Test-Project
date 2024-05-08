@@ -31,6 +31,7 @@ import fonts from './task/fonts';
 import fontsStyle from './task/fontStyle';
 import clearFonts from './task/clearFonts';
 import reactWebp from './task/reactWebp';
+import redirect from "./task/redirect";
 
 const change = $.gulp.series(clearFonts, fonts, fontsStyle);
 const changejson = $.gulp.series(json, pug);
@@ -39,6 +40,7 @@ function reload(done) {
 	$.browserSync.reload();
 	done();
 }
+
 const watcher = () => {
 
 	$.gulp.watch(path.js.watch, $.gulp.series(js, reload));
@@ -54,7 +56,7 @@ const watcher = () => {
 	$.gulp.watch(path.fontsStyle.watch, change).on('all', $.browserSync.reload);
 };
 const end = $.gulp.series(
-	clear, json,
+	clear, json, redirect,
 	$.gulp.parallel(pug, scss, js, react, image, sprite, fonts), fontsStyle
 );
 const dev = $.gulp.series(end, $.gulp.parallel(watcher, server));
@@ -71,5 +73,6 @@ export { image };
 export { sprite };
 export { fonts };
 export { fontsStyle };
+export { redirect };
 //* Assembly
 export default app.isProd ? end : dev;

@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"START": "gulp",
+		"Redirect": "gulp redirect",
 		"PRODUCTION": "gulp --production",
 		"DEL (Build)": "gulp clear",
 		"PUG": "gulp pug",
@@ -107,6 +108,7 @@
 		"gulp-cli": "^3.0.0",
 		"parallax-js": "^3.1.0",
 		"postcss": "^8.4.35",
+		"react-scripts": "^5.0.1",
 		"rellax": "^1.12.1",
 		"swiper": "^11.1.1"
 	}

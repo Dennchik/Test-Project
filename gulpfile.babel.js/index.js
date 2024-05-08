@@ -34,7 +34,6 @@ import reactWebp from './task/reactWebp';
 
 const change = $.gulp.series(clearFonts, fonts, fontsStyle);
 const changejson = $.gulp.series(json, pug);
-const changeReact = $.gulp.series(react);
 //* Observation
 function reload(done) {
 	$.browserSync.reload();
@@ -44,7 +43,7 @@ const watcher = () => {
 
 	$.gulp.watch(path.js.watch, $.gulp.series(js, reload));
 	// $.gulp.watch(path.reactSass.watch, $.gulp.series(js, reload));
-	$.gulp.watch(path.react.watch, $.gulp.series(react, js, reload));
+	$.gulp.watch(path.react.watch, $.gulp.series(react, reload));
 	$.gulp.watch(path.pug.watch, pug).on('all', $.browserSync.reload);
 	$.gulp.watch(path.json.watch, changejson).on('all', $.browserSync.reload);
 	$.gulp.watch(path.json.readFile, pug).on('all', $.browserSync.reload);

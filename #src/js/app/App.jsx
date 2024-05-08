@@ -1,32 +1,25 @@
-import React, { useEffect } from 'react';
-import { Routes, Route, Link } from "react-router-dom";
-import Header from '../layouts/Header.jsx';
+import React from 'react';
+import { Routes, Route, Navigate } from "react-router-dom";
+
 import { Homepage } from "../pages/Homepage.jsx";
 import { Aboutpage } from "../pages/Aboutpage.jsx";
-import Notfound from "../layouts/NotFound.jsx";
-import { CustomLink } from '../components/CustomLink.jsx';
+// -----------------------------------------------------------------------------
+import { Layout } from '../components/Layout.jsx';
+import { AuthProvider } from '../hoc/AuthProvider.jsx';
 // -----------------------------------------------------------------------------
 
-// -----------------------------------------------------------------------------
-const baseUrl = '.';
 // -----------------------------------------------------------------------------
 export default function App() {
 
 	return (
-		<>
-			<div className='page__header'>
-				<CustomLink to="/">HOME</CustomLink>
-				<CustomLink to="/about">ABOUT</CustomLink>
-				{/* <Header baseUrl={baseUrl} /> */}
-			</div>
-			<div className="page__content">
-				{/* <Homepage /> */}
-				<Routes>
+		<AuthProvider>
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<Homepage />} />
 					<Route path="/" element={<Homepage />} />
 					<Route path="/about" element={<Aboutpage />} />
-					<Route path="/about" element={<Notfound />} />
-				</Routes>
-			</div>
-		</>
+				</Route>
+			</Routes>
+		</AuthProvider>
 	);
 }

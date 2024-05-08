@@ -29,7 +29,7 @@ export default {
 	},
 	js: {
 		src: pathSrc + '/js/*.js',
-		watch: pathSrc + '/js/**/*.{js,scss}',
+		watch: pathSrc + '/js/**/*.{js,jsx,scss}',
 		dest: pathDest + "/js"
 	},
 	react: {

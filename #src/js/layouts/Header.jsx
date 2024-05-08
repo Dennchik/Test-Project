@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { timeLineHeaderItem } from '../modules/anime-js.js';
+import { CustomLink } from '../components/CustomLink.jsx';
 
-const Header = ({ baseUrl }) => {
+const Header = () => {
 	// const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
 	useEffect(() => {
 		timeLineHeaderItem();
@@ -31,16 +32,16 @@ const Header = ({ baseUrl }) => {
 		};
 	}, []);
 
-	const getPath = (fileName) => {
-		return `${baseUrl}/${fileName}`;
-	};
+	// const getPath = (fileName) => {
+	// 	return `${baseUrl}/${fileName}`;
+	// };
 
 	return (
-		<header className="header key-object">
+		<div className="header key-object">
 			<div className="header__container">
 				<div className="header__column el-logo">
-					<a href={getPath('index.html')}>
-						<div className="header__logo"></div></a>
+					<CustomLink to='/'>
+						<div className="header__logo"></div></CustomLink>
 					<div className="header__text">
 						<h1>Media-Studio</h1>
 						<p><span>Group</span><span>Obninsk</span></p>
@@ -49,31 +50,27 @@ const Header = ({ baseUrl }) => {
 				<div className="header__column">
 					<div className="header__menu">
 						<div className="header__item header__item--home">
-							<a href="/">HOME</a>
+							<CustomLink to="/">HOME</CustomLink>
 						</div>
 						<div className="header__item header__item--services">
-							<a className='link-key key-services' href='/about'
-							// to='services'
-							// duration={700}
-							// offset={-100}
-							// smooth='easeInCubic'
-							>SERVICES</a>
+							<CustomLink className='link-key key-services' to='/about'>SERVICES</CustomLink>
 						</div>
 						<div className="header__item">
-							<a href={getPath('pages/videos.html')}>VIDEOS</a></div>
-						<div className="header__item">
-							<a href='/pages/about.html'>BIO</a>
+							<a href='/'>VIDEOS</a>
 						</div>
 						<div className="header__item">
-							<a href={getPath('pages/news.html')}>NEWS</a>
+							<CustomLink to='/about'>ABOUT</CustomLink>
+						</div>
+						<div className="header__item">
+							<CustomLink to='/news'>NEWS</CustomLink>
 						</div>
 						<div className="header__item header__item--contacts">
-							<Link className='link-key key-services'
-								to='footer'
-								duration={700}
-								offset={-100}
-								smooth='easeInQuad'
-							>CONTACTS</Link>
+							<a className='link-key key-services'
+							// to='footer'
+							// duration={700}
+							// offset={-100}
+							// smooth='easeInQuad'
+							>CONTACTS</a>
 						</div>
 					</div>
 					<div className="header__bookmark">
@@ -90,7 +87,7 @@ const Header = ({ baseUrl }) => {
 					</a>
 				</div>
 			</div>
-		</header >
+		</div >
 	);
 };
 

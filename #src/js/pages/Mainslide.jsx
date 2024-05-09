@@ -60,8 +60,8 @@ export default function MainSlide({ baseUrl }) {
 					<div className="main-slide__slide-image _img">
 						<picture> {
 							isWebpSupported()
-								? <img src={getPath("/img/main/slides/slide_1.webp")} alt="slide-1" />
-								: <img src={getPath("/img/main/slides/slide_1.jpg")} alt="slide-1" />
+								? <img src={getPath("img/main/slides/slide_1.webp")} alt="slide-1" />
+								: <img src={getPath("img/main/slides/slide_1.jpg")} alt="slide-1" />
 						}
 						</picture>
 					</div>

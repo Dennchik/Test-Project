@@ -17,7 +17,7 @@ import { AuthProvider } from './hoc/AuthProvider.jsx';
 
 const rootElement = document.getElementById("page");
 const root = ReactDOMClient.createRoot(rootElement);
-const location = useLocation();
+// const location = useLocation();
 // if (location.pathname.includes('/')) {
 // 	window.location.href = location.pathname;
 // }

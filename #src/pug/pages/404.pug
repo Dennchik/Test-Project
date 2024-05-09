@@ -1,17 +1,10 @@
 extends ../layouts/app_layout
 append link 
-	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
-prepend script 
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/runtime.min.js")
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/anime-vendors.min.js")
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/react-vendors.min.js")
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/swiper-bundle.min.js")
-	script(defer="defer" type="text/javascript" src="./js/app/index-homepage.min.js") 
+	meta(http-equiv="refresh", content="0; URL=\'/Test-Project/build/index.html\'")  
 block title
-	- var text='Студия зувукозаписи "Gusli" Обнинск' 
+	- var text='Redirecting...' 
 
-block page-content
-	.page#page 
+ 
 block notfound
 			script.
 				window.onload = function () {

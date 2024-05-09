@@ -1,8 +1,9 @@
 {
 	"name": "gulp-start-es6",
 	"version": "1.0.0",
-	"description": "Сборка Gulp-V-ES6",
+	"description": "Test-Project-React",
 	"main": "index.js",
+	"homepage": "https://dennchik.github.io/Test-Project/build",
 	"scripts": {
 		"START": "gulp",
 		"Redirect": "gulp redirect",

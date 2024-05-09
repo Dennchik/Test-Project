@@ -11,6 +11,7 @@ const Homepage = () => {
 				<div className="main-content__content" id='content'>
 					<div className="main-content__slide">
 						<MainSlide baseUrl={baseUrl} />
+						{/* <MainSlide /> */}
 					</div>
 				</div>
 			</div>

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Routes, Route, Navigate, Link, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 // -----------------------------------------------------------------------------
-
 import { Homepage } from "../pages/Homepage.jsx";
 import { Aboutpage } from "../pages/Aboutpage.jsx";
 // -----------------------------------------------------------------------------

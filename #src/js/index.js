@@ -12,7 +12,8 @@ import { BrowserRouter } from 'react-router-dom';
 // -----------------------------------------------------------------------------
 createRoot(document.getElementById('page')).render(
 	<StrictMode>
-		<BrowserRouter>
+		{/* <BrowserRouter> */}
+		<BrowserRouter basename="/Test-Project/build">
 			<App />
 		</BrowserRouter>
 	</StrictMode>

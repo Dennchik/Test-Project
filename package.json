@@ -3,7 +3,6 @@
 	"version": "1.0.0",
 	"description": "Test-Project-React",
 	"main": "index.js",
-	"homepage": "https://dennchik.github.io/Test-Project/build",
 	"scripts": {
 		"START": "gulp",
 		"Redirect": "gulp redirect",

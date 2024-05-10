@@ -26,6 +26,11 @@ export default {
 			],
 			runtimeChunk: 'single',
 		},
+		devServer: {
+			historyApiFallback: {
+				rewrites: [{ from: /\//, to: '/404.html' }],
+			},
+		},
 		entry: {
 			// anime: './#src/js/app/animate-index.jsx'
 			// about: { import: './#src/js/about.jsx', filename: '[name].min.js' },
@@ -115,12 +120,17 @@ export default {
 			// 	},
 			// },
 		},
+		devServer: {
+			historyApiFallback: {
+				rewrites: [{ from: /\//, to: '/404.html' }],
+			},
+		},
 		entry: {
 			// about: './#src/js/about.js',
 			// index: { import: ['./#src/js/index.js'], filename: '[name].min.js' },
 			main: { import: ['./#src/js/main.js'], filename: '[name].min.js' },
 
-			'index-homepage': { import: ['./#src/js/index.js'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
+			index: { import: ['./#src/js/index.js'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'], filename: '[name].min.js' },
 
 			'react-vendors': { import: ['react', 'react-dom', 'react-router-dom', 'prop-types'] },
 			'anime-vendors': { import: ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'] },

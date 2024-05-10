@@ -17,21 +17,10 @@ import { AuthProvider } from './hoc/AuthProvider.jsx';
 
 const rootElement = document.getElementById("page");
 const root = ReactDOMClient.createRoot(rootElement);
-// const location = useLocation();
-// if (location.pathname.includes('/')) {
-// 	window.location.href = location.pathname;
-// }
 root.render(
 	<StrictMode>
 		<BrowserRouter basename="/Test-Project/build">
-			<AuthProvider>
-				<Routes>
-					<Route path="/" element={<Layout />}>
-						<Route path="/" element={<Homepage />} />
-						<Route path="/about" element={<Aboutpage />} />
-					</Route>
-				</Routes>
-			</AuthProvider>
+			<App />
 		</BrowserRouter>
 	</StrictMode>
 );

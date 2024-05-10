@@ -1,14 +1,19 @@
 extends ../layouts/app_layout
 append link 
-	meta(http-equiv="refresh", content="0; URL=\'/Test-Project/build/index.html\'")  
+	meta(http-equiv="refresh", content="0; URL=\'/Test-Project/build/index.html\'")
 block title
 	- var text='Redirecting...' 
 
 block notfound
 	script.
-		import { useLocation } from 'react-router-dom';
 		window.onload = function () {
-			const location = useLocation();
-			const url = location.pathname.includes('/') ? `/Test-Project/build/index.html` : '/';
-			document.querySelector('meta[http-equiv="refresh"]').setAttribute('content', `0; URL='${url}'`);
+			var segmentCount = 0;
+			var l = window.location;
+			l.replace(
+				l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+				l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/Test-Project/build/#' +
+				l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+				(l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+				l.hash
+			);
 		};

@@ -17,7 +17,8 @@ const rootElement = document.getElementById("page");
 const root = ReactDOMClient.createRoot(rootElement);
 root.render(
 	<StrictMode>
-		<BrowserRouter basename="/Test-Project/build">
+		{/* <BrowserRouter basename="/Test-Project/build"> */}
+		<BrowserRouter>
 			<App />
 		</BrowserRouter>
 	</StrictMode>

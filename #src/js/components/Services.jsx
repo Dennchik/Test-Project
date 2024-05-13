@@ -1,18 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Element } from 'react-scroll';
-import { animationSvgLine, animationSvgText } from '../modules/anime-js.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
-import isMobile from "../libraries/Js-devise.js";
+// -----------------------------------------------------------------------------
+import { animationSvgLine, animationSvgText } from '../modules/anime-js.js';
+import swiperLayout from '../assets/swiper-layout.js';
+import servicesSlide from '../modules/services-slide.js';
+import isMobile from "../assets/Js-devise.js";
 // -----------------------------------------------------------------------------
 export default function Services() {
 	useEffect(() => {
 		const initSwiper = document.querySelector('.content-box__body');
 		if (isMobile.any()) {
+			console.log('mobyle');
 			initSwiper.classList.add('_swiper');
-			if (initSwiper.classList.contains('_swiper')) {
-			} else {
-				console.log('нет класс swiper');
-			}
+			swiperLayout();
+			servicesSlide();
 		} else {
 			console.log('no mobyle');
 		}
@@ -46,9 +48,6 @@ export default function Services() {
 			});
 		};
 	}, []);
-	// useEffect(() => {
-	// 	applyParallaxEffects(smoother, '.material-parallax');
-	// }, []);
 
 	return (
 		<Element className="services key-object" name='services'>

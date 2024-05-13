@@ -16,7 +16,7 @@ import { smoother, applyParallaxEffects, applyEffectsColumn, animateTitles, tlSe
 // -----------------------------------------------------------------------------
 const baseUrl = '.';
 // --------------------------------- Header ------------------------------------
-export function Header ({ baseUrl })  {
+export function Header({ baseUrl }) {
 	// const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
 	useEffect(() => {
 		timeLineHeaderItem();
@@ -226,7 +226,6 @@ const Mainslide = ({ baseUrl }) => {
 
 	);
 };
-export { Mainslide };
 // -------------------------------- Services -----------------------------------
 const Services = () => {
 	useEffect(() => {
@@ -903,16 +902,16 @@ const Menufloat = ({ baseUrl }) => {
 	);
 };
 //! ----------------------------------------------------------------------------
- 
+
 //! ----------------------------------------------------------------------------
 //? -----------------------------Render Header ---------------------------------
-// createRoot(document.querySelector('.page__header')).render(<Header baseUrl={baseUrl} />);
+createRoot(document.querySelector('.page__header')).render(<Header baseUrl={baseUrl} />);
 //? ---------------------------Render Mainslide --------------------------------
-// createRoot(document.querySelector('.main-content__slide')).render(<Mainslide baseUrl={baseUrl} />);
+createRoot(document.querySelector('.main-content__slide')).render(<Mainslide baseUrl={baseUrl} />);
 //? ---------------------------Render Services ---------------------------------
-// createRoot(document.querySelector('.main-content__services')).render(<Services baseUrl={baseUrl} />);
+createRoot(document.querySelector('.main-content__services')).render(<Services baseUrl={baseUrl} />);
 //? ----------------------------Render Footer ----------------------------------
-// createRoot(document.querySelector('.main-content__footer')).render(<Footer baseUrl={baseUrl} />);
+createRoot(document.querySelector('.main-content__footer')).render(<Footer baseUrl={baseUrl} />);
 //? ---------------------------Render Menufloat --------------------------------
-// createRoot(document.querySelector('.page__menu-float')).render(<Menufloat baseUrl={baseUrl} />);
+createRoot(document.querySelector('.page__menu-float')).render(<Menufloat baseUrl={baseUrl} />);
 // -----------------------------------------------------------------------------

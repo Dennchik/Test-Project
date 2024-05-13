@@ -1,9 +1,23 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-scroll';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
+import { Button } from 'react-scroll';
+
+import { Link } from 'react-router-dom';
 import { timeLineHeaderItem } from '../modules/anime-js.js';
-import { CustomLink } from '../components/CustomLink.jsx';
+import { CustomLink } from './CustomLink.jsx';
 
 const Header = () => {
+	// useEffect(() => {
+	// 	if (history.scrollRestoration) {
+	// 		history.scrollRestoration = "manual";
+	// 	}
+	// 	if ("scrollRestoration" in window.history) {
+	// 		window.history.scrollRestoration = "manual";
+	// 	}
+	// }, []);
+	// const location = useLocation();
+	// const history = useHistory();
+	// const [scrollPosition, setScrollPosition] = useState(0);
 	// const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
 	useEffect(() => {
 		timeLineHeaderItem();
@@ -12,6 +26,7 @@ const Header = () => {
 			const header = document.querySelector('.header');
 			const mainContent = document.querySelector('.page__main-content');
 			const mainContentTop = mainContent.getBoundingClientRect().top;
+			// setScrollPosition(window.scrollY);
 
 			if (mainContentTop < 0) {
 				header.classList.add('with-border');
@@ -32,9 +47,19 @@ const Header = () => {
 		};
 	}, []);
 
+
 	// const getPath = (fileName) => {
 	// 	return `${baseUrl}/${fileName}`;
 	// };
+	//* --------------------------------------------------------------------------
+	// useEffect(() => {
+	// 	// Восстанавливаем положение скролла при возвращении на страницу
+	// 	if (location.state && location.state.from) {
+	// 		window.scrollTo(0, location.state.from.scrollPosition);
+	// 	} else {
+	// 		window.scrollTo(0, scrollPosition);
+	// 	}
+	// }, [location]);
 
 	return (
 		<div className="header key-object">
@@ -53,16 +78,16 @@ const Header = () => {
 							<CustomLink to="/">HOME</CustomLink>
 						</div>
 						<div className="header__item header__item--services">
-							<CustomLink className='link-key key-services' to='/about'>SERVICES</CustomLink>
+							<Link className='link-key key-services' to='/about'>SERVICES</Link>
 						</div>
 						<div className="header__item">
-							<a href='/'>VIDEOS</a>
+							<Link href='/'>VIDEOS</Link>
 						</div>
 						<div className="header__item">
-							<CustomLink to='/about'>ABOUT</CustomLink>
+							<Link to='/about' >ABOUT</Link>
 						</div>
 						<div className="header__item">
-							<CustomLink to='/news'>NEWS</CustomLink>
+							<Link to='/news'>NEWS</Link>
 						</div>
 						<div className="header__item header__item--contacts">
 							<a className='link-key key-services'
@@ -90,6 +115,4 @@ const Header = () => {
 		</div >
 	);
 };
-
-
-export default Header;
+export { Header };

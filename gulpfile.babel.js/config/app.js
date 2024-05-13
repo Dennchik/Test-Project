@@ -40,12 +40,11 @@ export default {
 
 			// "about-components": { import: ['./#src/js/app/AboutComponents.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
 
-			// 'react-vendors': { import: ['react', 'react-dom', 'prop-types'] },
+			index: { import: ['./#src/js/layouts/index.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'], filename: '[name].min.js' },
 
-			// 'anime-vendors': { import: ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'] },
-
-			// 'swiper-bundle': { import: ['swiper/bundle'] }
-
+			'react-vendors': { import: ['react', 'react-dom', 'react-router-dom', 'prop-types'] },
+			'anime-vendors': { import: ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'] },
+			'swiper-bundle': { import: ['swiper/bundle'] }
 		},
 		output: {
 			filename: 'app/[name].min.js',
@@ -107,7 +106,7 @@ export default {
 					extractComments: false,
 				}),
 			],
-			runtimeChunk: 'single',
+			// runtimeChunk: 'single',
 
 			// splitChunks: {
 			// 	chunks: 'async',
@@ -128,16 +127,16 @@ export default {
 		entry: {
 			// about: './#src/js/about.js',
 			// index: { import: ['./#src/js/index.js'], filename: '[name].min.js' },
-			main: { import: ['./#src/js/main.js'], filename: '[name].min.js' },
+			main: { import: ['./#src/js/main.js'] },
 
-			index: { import: ['./#src/js/index.js'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'], filename: '[name].min.js' },
+			// index: { import: ['./#src/js/index.js'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'], filename: '[name].min.js' },
 
-			'react-vendors': { import: ['react', 'react-dom', 'react-router-dom', 'prop-types'] },
-			'anime-vendors': { import: ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'] },
-			'swiper-bundle': { import: ['swiper/bundle'] }
+			// 'react-vendors': { import: ['react', 'react-dom', 'react-router-dom', 'prop-types'] },
+			// 'anime-vendors': { import: ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'] },
+			// 'swiper-bundle': { import: ['swiper/bundle'] }
 		},
 		output: {
-			filename: 'app/[name].min.js',
+			filename: '[name].min.js',
 		},
 		module: {
 			rules: [
@@ -164,7 +163,6 @@ export default {
 				},
 			],
 		},
-
 	},
 
 	svgSpr: {

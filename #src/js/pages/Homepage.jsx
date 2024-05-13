@@ -1,21 +1,26 @@
 import React from 'react';
 // -----------------------------------------------------------------------------
-import MainSlide from "../pages/Mainslide.jsx";
+import MainSlide from "../components/Mainslide.jsx";
+import Services from "../components/Services.jsx";
+import { Footer } from '../components/Footer.jsx';
 // -----------------------------------------------------------------------------
 const baseUrl = '.';
 // -----------------------------------------------------------------------------
 const Homepage = () => {
 	return (
-		<div className='page__main-content'>
-			<div className="main-content" id='wrapper'>
-				<div className="main-content__content" id='content'>
-					<div className="main-content__slide">
-						<MainSlide baseUrl={baseUrl} />
-						{/* <MainSlide /> */}
-					</div>
-				</div>
+		<>
+
+			<div className="main-content__slide">
+				<MainSlide baseUrl={baseUrl} />
 			</div>
-		</div>
+			<div className='main-content__services'>
+				<Services />
+			</div>
+			<div className="main-content__footer" id='footer'>
+				<Footer baseUrl={baseUrl} />
+			</div>
+
+		</>
 	);
 };
 export { Homepage };

@@ -1,5 +1,5 @@
 // import swiperLayout from "../assets/swiper-layout";
-// swiperLayout('._swiper');
+// swiperLayout();
 //* import Swiper bundle with all modules installed 
 import Swiper from 'swiper/bundle';
 //* import styles bundle 

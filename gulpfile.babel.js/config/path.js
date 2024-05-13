@@ -31,13 +31,13 @@ export default {
 	},
 	js: {
 		src: pathSrc + '/js/*.js',
-		watch: pathSrc + '/js/**/*.{js,jsx,scss}',
+		watch: pathSrc + '/js/**/*.js',
 		dest: pathDest + "/js"
 	},
 	react: {
-		src: pathSrc + '/js/**/*.{jsx}',
-		watch: pathSrc + '/js/**/*.{jsx,scss}',
-		dest: pathDest + '/js/app/'
+		src: pathSrc + '/js/**/*.jsx',
+		watch: pathSrc + '/js/**/*.jsx',
+		dest: pathDest + '/js'
 	},
 	reactSass: {
 		src: pathSrc + '/scss/assets/*.{jsx,js}',

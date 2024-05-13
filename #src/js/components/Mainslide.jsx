@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import { fadeInSlide } from '../modules/anime-js.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
+// ------------------------- Component's Mainslide -----------------------------
 import swiperLayout from '../assets/swiper-layout.js';
 import mainSlide from '../modules/main-slide.js';
 import AudioPlayer from '../layouts/AudioPlayer.jsx';
-// import audio from '../assets/audio-player.js';
-// import { Element } from 'react-scroll';
-// Компонент Mainslide
+// -----------------------------------------------------------------------------
+
 export default function MainSlide({ baseUrl }) {
 	useEffect(() => {
-		// swiperLayout('._swiper');
 		swiperLayout();
 		mainSlide();
 	}, []);
@@ -123,6 +122,5 @@ export default function MainSlide({ baseUrl }) {
 				<AudioPlayer />
 			</div>
 		</div>
-
 	);
 };

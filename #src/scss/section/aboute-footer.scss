@@ -1,4 +1,4 @@
-.about {
+.about-company {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	width: 100%;
@@ -12,7 +12,7 @@
 		grid-template-columns: auto;
 	}
 
-	// .about__column
+	// .about-company__column
 	&__column {
 		display: flex;
 		flex-direction: column;
@@ -23,21 +23,25 @@
 			@include _690-920 {
 				grid-column: -3 / -1;
 			}
-			.about__body {
+			.about-company__body {
 				border: none;
+			}
+		}
+		&:not(:last-child) {
+			.about-company__body {
+				border-bottom: 1px solid $gray;
 			}
 		}
 	}
 
-	// .about__body
+	// .about-company__body
 	&__body {
 		display: flex;
 		flex-direction: column;
 		flex: 1 1 auto;
-		border-bottom: 1px solid $gray;
 	}
 
-	// .about__text
+	// .about-company__text
 	&__text {
 		padding: 2rem 0;
 
@@ -57,18 +61,18 @@
 		}
 	}
 
-	// .about__footer
+	// .about-company__footer
 	&__footer {
 		padding: 2rem 0;
 	}
 
-	// .about__title
+	// .about-company__title
 	&__title {
 		font-size: 2rem;
 		text-shadow: 1px 1px 1px $neon-pink;
 	}
 
-	// .about__item-services
+	// .about-company__item-services
 	&__item-services {
 		flex-wrap: nowrap;
 		padding: 2.5rem 0;
@@ -93,7 +97,7 @@
 		gap: 2rem;
 	}
 
-	// .about__button
+	// .about-company__button
 	&__button {
 		display: block;
 		width: fit-content;
@@ -112,7 +116,7 @@
 		}
 	}
 
-	// .about__team-items
+	// .about-company__team-items
 	&__team-items {
 		display: flex;
 		flex-direction: column;

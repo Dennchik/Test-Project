@@ -24,7 +24,7 @@ export default function servicesSlide(
 				376: {
 					slidesPerView: 2,
 				},
-				491: {
+				580: {
 					slidesPerView: 3,
 				},
 				768: {

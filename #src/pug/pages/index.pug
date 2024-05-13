@@ -2,25 +2,25 @@ extends ../layouts/app_layout
 append link 
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
 prepend script 
-	script(type="text/javascript").
-		(function(l) {
-			if (l.search[1] === '/' ) {
-				var decoded = l.search.slice(1).split('&').map(function(s) { 
-					return s.replace(/~and~/g, '&')
-				}).join('?');
-				window.history.replaceState(null, null,
-						l.pathname.slice(0, -1) + decoded + l.hash
-				);
-			}
-		}(window.location))
+	//- script(type="text/javascript").
+	//- 	(function(l) {
+	//- 		if (l.search[1] === '/' ) {
+	//- 			var decoded = l.search.slice(1).split('&').map(function(s) { 
+	//- 				return s.replace(/~and~/g, '&')
+	//- 			}).join('?');
+	//- 			window.history.replaceState(null, null,
+	//- 					l.pathname.slice(0, -1) + decoded + l.hash
+	//- 			);
+	//- 		}
+	//- 	}(window.location))
+	script(type="text/javascript" src="@@webRoot/js/index.min.js") 
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/runtime.min.js")
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/anime-vendors.min.js")
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/react-vendors.min.js")
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/swiper-bundle.min.js")
 	//- script(defer="defer" type="text/javascript" src="/Test-Project/build/js/index.min.js") 
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/index.min.js") 
 block title
-	- var text='Студия зувукозаписи "Gusli" Обнинск' 
+	- var text='TECT - Студия зувукозаписи "Gusli" Обнинск' 
 
 block page-content
 	.page#page

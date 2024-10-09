@@ -1,8 +1,8 @@
 import TerserPlugin from 'terser-webpack-plugin';
-import pugbem from "gulp-pugbem";
-import imagemin from "gulp-imagemin";
+import pugbem from 'gulp-pugbem';
+import imagemin from 'gulp-imagemin';
 
-const isProd = process.argv.includes("--production");
+const isProd = process.argv.includes('--production');
 const isDev = !isProd;
 
 export default {
@@ -28,7 +28,7 @@ export default {
 		},
 		devServer: {
 			historyApiFallback: {
-				rewrites: [{ from: /\//, to: '/404.html' }],
+				rewrites: [{from: /\//, to: '/404.html'}],
 			},
 		},
 		entry: {
@@ -36,15 +36,21 @@ export default {
 			// about: { import: './#src/js/about.jsx', filename: '[name].min.js' },
 			// index: { import: './#src/js/index.jsx', filename: '[name].min.js' },
 
-			// 'home-components': { import: ['./#src/js/app/MainComponents.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
+			// 'home-components': { import: ['./#src/js/app/MainComponents.jsx'],
+			// dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
 
-			// "about-components": { import: ['./#src/js/app/AboutComponents.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
+			// "about-components": { import: ['./#src/js/app/AboutComponents.jsx'],
+			// dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
 
-			index: { import: ['./#src/js/layouts/index.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'], filename: '[name].min.js' },
+			index: {
+				import: ['./#src/js/layouts/index.jsx'],
+				dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'],
+				filename: '[name].min.js'
+			},
 
-			'react-vendors': { import: ['react', 'react-dom', 'react-router-dom', 'prop-types'] },
-			'anime-vendors': { import: ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'] },
-			'swiper-bundle': { import: ['swiper/bundle'] }
+			'react-vendors': {import: ['react', 'react-dom', 'react-router-dom', 'prop-types']},
+			'anime-vendors': {import: ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger']},
+			'swiper-bundle': {import: ['swiper/bundle']}
 		},
 		output: {
 			filename: 'app/[name].min.js',
@@ -60,16 +66,16 @@ export default {
 				{
 					test: /\.css$/,
 					use: [
-						"style-loader",
-						"css-loader"
+						'style-loader',
+						'css-loader'
 					],
 				},
 				{
 					test: /\.scss$/,
 					exclude: /node_modules/,
 					use: [
-						"style-loader",
-						"css-loader",
+						'style-loader',
+						'css-loader',
 						'sass-loader'   // компилирует Sass в CSS
 					]
 				},
@@ -121,19 +127,21 @@ export default {
 		},
 		devServer: {
 			historyApiFallback: {
-				rewrites: [{ from: /\//, to: '/404.html' }],
+				rewrites: [{from: /\//, to: '/404.html'}],
 			},
 		},
 		entry: {
 			// about: './#src/js/about.js',
 			// index: { import: ['./#src/js/index.js'], filename: '[name].min.js' },
-			main: { import: ['./#src/js/main.js'] },
+			main: {import: ['./#src/js/main.js']},
 
-			// index: { import: ['./#src/js/index.js'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'], filename: '[name].min.js' },
+			// index: { import: ['./#src/js/index.js'], dependOn: ['react-vendors',
+			// 'anime-vendors', 'swiper-bundle'], filename: '[name].min.js' },
 
-			// 'react-vendors': { import: ['react', 'react-dom', 'react-router-dom', 'prop-types'] },
-			// 'anime-vendors': { import: ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'] },
-			// 'swiper-bundle': { import: ['swiper/bundle'] }
+			// 'react-vendors': { import: ['react', 'react-dom', 'react-router-dom',
+			// 'prop-types'] }, 'anime-vendors': { import: ['gsap', 'animejs',
+			// 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'] }, 'swiper-bundle': {
+			// import: ['swiper/bundle'] }
 		},
 		output: {
 			filename: '[name].min.js',
@@ -148,16 +156,16 @@ export default {
 				{
 					test: /\.css$/,
 					use: [
-						"style-loader",
-						"css-loader"
+						'style-loader',
+						'css-loader'
 					],
 				},
 				{
 					test: /\.scss$/,
 					exclude: /node_modules/,
 					use: [
-						"style-loader",
-						"css-loader",
+						'style-loader',
+						'css-loader',
 						'sass-loader'   // компилирует Sass в CSS
 					]
 				},
@@ -182,9 +190,9 @@ export default {
 			transform: [{
 				svgo: {
 					plugins: [
-						"cleanupAttrs",
-						"convertColors",
-						"removeEmptyAttrs"
+						'cleanupAttrs',
+						'convertColors',
+						'removeEmptyAttrs'
 					]
 				}
 			}],
@@ -232,32 +240,32 @@ export default {
 			$('[stroke]').removeAttr('stroke');
 			$('[style]').removeAttr('style');
 		},
-		parserOptions: { xmlMode: true }
+		parserOptions: {xmlMode: true}
 	},
 	autoprefixer: {
 		cascade: false,
 		grid: 'auto-place',
 		overrideBrowserslist: [
-			"Android >= 4",
-			"last 3 versions",
-			"Firefox >= 24",
-			"Safari >= 6",
-			"Opera >= 12"
+			'Android >= 4',
+			'last 3 versions',
+			'Firefox >= 24',
+			'Safari >= 6',
+			'Opera >= 12'
 		]
 	},
 	imagemin: ([
 		imagemin.svgo({
 			plugins: [
-				{ optimizationLevel: 5 },
-				{ progessive: true },
-				{ interlaced: true },
-				{ removeViewBox: false },
-				{ removeUselessStrokeAndFill: false },
-				{ cleanupIDs: false }
+				{optimizationLevel: 5},
+				{progessive: true},
+				{interlaced: true},
+				{removeViewBox: false},
+				{removeUselessStrokeAndFill: false},
+				{cleanupIDs: false}
 			],
 		}),
 		imagemin.gifsicle(
-			{ interlaced: true }
+			{interlaced: true}
 		),
 		imagemin.optipng({
 			optimizationLevel: 5

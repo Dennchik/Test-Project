@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // -----------------------------------------------------------------------------
 import { About } from '../components/About.jsx';
 import { Footer } from '../components/Footer.jsx';
@@ -6,6 +6,10 @@ import { Footer } from '../components/Footer.jsx';
 const baseUrl = '.';
 // -----------------------------------------------------------------------------
 const Aboutpage = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0);// Сброс прокрутки при рендеринг страницы
+		console.log(window.scrollTo, 'scroll');
+	}, []); // Этот эффект выполнится один раз при монтировании страницы
 	return (
 		<>
 			<div className="main-content__aboute">

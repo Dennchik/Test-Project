@@ -1,11 +1,11 @@
-import React, { StrictMode, useEffect } from "react";
-import * as ReactDOMClient from "react-dom/client";
+import React, { StrictMode, useEffect } from 'react';
+import * as ReactDOMClient from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import App from '../app/App.jsx';
 
 
 
-const rootElement = document.getElementById("page");
+const rootElement = document.getElementById('page');
 const root = ReactDOMClient.createRoot(rootElement);
 root.render(
 	<StrictMode>

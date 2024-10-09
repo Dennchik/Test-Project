@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
-import { Button } from 'react-scroll';
+import React, { useEffect } from 'react';
+// import { useLocation, useHistory } from 'react-router-dom';
+// import { Button } from 'react-scroll';
 
 import { Link } from 'react-router-dom';
 import { timeLineHeaderItem } from '../modules/anime-js.js';
@@ -19,33 +19,33 @@ const Header = () => {
 	// const history = useHistory();
 	// const [scrollPosition, setScrollPosition] = useState(0);
 	// const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
-	useEffect(() => {
-		timeLineHeaderItem();
-		// const fadeIn = document.querySelector('.page__fade-in');
-		const handleScroll = () => {
-			const header = document.querySelector('.header');
-			const mainContent = document.querySelector('.page__main-content');
-			const mainContentTop = mainContent.getBoundingClientRect().top;
-			// setScrollPosition(window.scrollY);
-
-			if (mainContentTop < 0) {
-				header.classList.add('with-border');
-				// fadeIn.classList.add('with-border');
-			} else {
-				header.classList.add('without-border');
-				header.classList.remove('with-border');
-				// fadeIn.classList.remove('with-border');
-			}
-			if (mainContentTop < 0) {
-				header.classList.remove('without-border');
-			}
-		};
-		window.addEventListener('scroll', handleScroll);
-		// Очистка слушателя событий при размонтировании компонента
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
+	// useEffect(() => {
+	// 	timeLineHeaderItem();
+	// 	// const fadeIn = document.querySelector('.page__fade-in');
+	// 	const handleScroll = () => {
+	// 		const header = document.querySelector('.header');
+	// 		const mainContent = document.querySelector('.page__main-content');
+	// 		const mainContentTop = mainContent.getBoundingClientRect().top;
+	// 		// setScrollPosition(window.scrollY);
+	//
+	// 		if (mainContentTop < 0) {
+	// 			header.classList.add('with-border');
+	// 			// fadeIn.classList.add('with-border');
+	// 		} else {
+	// 			header.classList.add('without-border');
+	// 			header.classList.remove('with-border');
+	// 			// fadeIn.classList.remove('with-border');
+	// 		}
+	// 		if (mainContentTop < 0) {
+	// 			header.classList.remove('without-border');
+	// 		}
+	// 	};
+	// 	window.addEventListener('scroll', handleScroll);
+	// 	// Очистка слушателя событий при размонтировании компонента
+	// 	return () => {
+	// 		window.removeEventListener('scroll', handleScroll);
+	// 	};
+	// }, []);
 
 
 	// const getPath = (fileName) => {
@@ -53,7 +53,7 @@ const Header = () => {
 	// };
 	//* --------------------------------------------------------------------------
 	// useEffect(() => {
-	// 	// Восстанавливаем положение скролла при возвращении на страницу
+	// 	// Восстанавливаем положение скроллинга при возвращении на страницу
 	// 	if (location.state && location.state.from) {
 	// 		window.scrollTo(0, location.state.from.scrollPosition);
 	// 	} else {
@@ -69,7 +69,10 @@ const Header = () => {
 						<div className="header__logo"></div></CustomLink>
 					<div className="header__text">
 						<h1>Media-Studio</h1>
-						<p><span>Group</span><span>Obninsk</span></p>
+						<p>
+							<span>Group</span>
+							<span>Obninsk</span>
+						</p>
 					</div>
 				</div>
 				<div className="header__column">
@@ -81,7 +84,7 @@ const Header = () => {
 							<Link className='link-key key-services' to='/about'>SERVICES</Link>
 						</div>
 						<div className="header__item">
-							<Link href='/'>VIDEOS</Link>
+							<Link to='/'>VIDEOS</Link>
 						</div>
 						<div className="header__item">
 							<Link to='/about' >ABOUT</Link>

@@ -16,7 +16,7 @@ export default function App() {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 		ScrollTrigger.normalizeScroll(true);
-		ScrollTrigger.config({ignoreMobileResize: true});
+		ScrollTrigger.config({ ignoreMobileResize: true });
 
 		let smoother = ScrollSmoother.create({
 			wrapper: '#wrapper',
@@ -25,10 +25,6 @@ export default function App() {
 			effects: true,
 			normalizeScroll: true
 		});
-
-		//* Принудительно сбрасываем прокрутку при смене маршрута
-		smoother.scrollTop(0, true);  // Сбрасываем прокрутку плавно
-
 		if (isMobile.any()) {
 			console.log('mobile');
 			return () => {
@@ -37,7 +33,6 @@ export default function App() {
 		} else {
 			console.log('no mobile');
 
-			//* Пересоздаем эффекты для колонок
 			smoother.effects('.content-box__column', {
 				speed: (i) => {
 					if (initialPositions) {
@@ -61,12 +56,11 @@ export default function App() {
 		};
 	}, [initialPositions, location.pathname]);
 	useEffect(() => {
-		//* Сохраняем начальные позиции элементов при первой загрузке страницы
+		// Сохраняем начальные позиции элементов при первой загрузке страницы
 		if (!initialPositions) {
 			const columns = document.querySelectorAll('.content-box__column');
 			const positions = Array.from(columns).map((_, i) => ({
-				speed: i % 2 === 0 ? 0.9 : 1.15 // Укажите здесь правильное
-				                                // позиционирование элементов
+				speed: i % 2 === 0 ? 0.9 : 1.15 // Укажите здесь правильное позиционирование элементов
 			}));
 			setInitialPositions(positions);
 		}
@@ -74,17 +68,13 @@ export default function App() {
 
 
 	return (
-		<>
-			<ScrollToTop/> {/* Добавляем компонент для сброса прокрутки */}
-			<Routes>
-				<Route path="/"
-				       element={<Layout/>}>
-					<Route path="/"
-					       element={<Homepage/>}/>
-					<Route path="/about"
-					       element={<Aboutpage/>}/>
-				</Route>
-			</Routes>
-		</>
+
+		<Routes>
+			<Route path="/" element={<Layout />}>
+				<Route path="/" element={<Homepage />} />
+				<Route path="/about" element={<Aboutpage />} />
+			</Route>
+		</Routes>
+
 	);
 }
